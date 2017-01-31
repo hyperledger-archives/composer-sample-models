@@ -1,0 +1,34 @@
+{
+  "name": "@ibm/digitalproperty-model",
+  "version": "0.0.1",
+  "description": "Digital Property Network",
+  "scripts": {
+    "licchk": "license-check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/Blockchain-WW-Labs/DigitalProperty-Model.git"
+  },"main": "index.js",
+  "keywords": [
+    "property",
+    "land",
+    "compliance"
+  ],
+  "author": "IBM",
+  "license": "ISC",
+  "devDependencies": {
+    "license-check": "^1.1.5"
+  },
+  "publishConfig": {
+    "registry": "https://npm-registry.whitewater.ibm.com"
+  },
+  "license-check-config": {
+    "src": [
+      "**/*.cto"
+    ],
+    "path": "header.txt",
+    "blocking": true,
+    "logInfo": false,
+    "logError": true
+  }
+}
