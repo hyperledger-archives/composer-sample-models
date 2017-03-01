@@ -1,4 +1,0 @@
-/**
- * IBM Blockchain Framework - Digitial Land Title Business Network Getting Started
- *
- */

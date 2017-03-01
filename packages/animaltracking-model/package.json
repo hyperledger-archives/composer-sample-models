@@ -1,13 +1,14 @@
 {
   "name": "animaltracking-model",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Animal Tracking model based on UK DEFRA regulations",
   "scripts": {
-    "licchk": "license-check"
+    "licchk": "license-check",
+    "test": "npm run licchk"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.ibm.com/Blockchain-WW-Labs/AnimalTracking-Model.git"
+    "url": "https://github.com/fabric-composer/sample-models.git"
   },
   "keywords": [
     "defra",
@@ -15,13 +16,10 @@
     "tracking",
     "compliance"
   ],
-  "author": "IBM",
-  "license": "ISC",
+  "author": "Fabric Composer",
+  "license": "Apache-2.0",
   "devDependencies": {
     "license-check": "^1.1.5"
-  },
-  "publishConfig": {
-    "registry": "https://npm-registry.whitewater.ibm.com"
   },
   "license-check-config": {
     "src": [
