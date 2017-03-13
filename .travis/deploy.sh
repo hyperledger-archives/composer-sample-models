@@ -26,8 +26,8 @@ npm config set registry https://registry.npmjs.org/
 npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
 
 # Set the GitHub deploy key we will use to publish.
-set-up-ssh --key "$encrypted_c05e0a525edd_key" \
-           --iv "$encrypted_c05e0a525edd_iv" \
+set-up-ssh --key "$encrypted_8496d53a6fac_key" \
+           --iv "$encrypted_8496d53a6fac_iv" \
            --path-encrypted-key ".travis/github_deploy_key.enc"
 
 # Change from HTTPS to SSH.
@@ -54,8 +54,8 @@ else
     lerna exec --ignore '@(composer-systests|composer-website)' -- npm publish 2>&1 | tee
 
     # Configure the Git repository and clean any untracked and unignored build files.
-    git config user.name "Travis CI"
-    git config user.email "noreply@travis-ci.org"
+    git config user.name "${GH_USER_NAME}"
+    git config user.email "${GH_USER_EMAIL}"
     git checkout -b master
     git reset --hard
     git clean -d -f
