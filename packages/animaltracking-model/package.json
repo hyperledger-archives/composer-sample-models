@@ -1,6 +1,6 @@
 {
   "name": "animaltracking-model",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Animal Tracking model based on UK DEFRA regulations",
   "scripts": {
     "licchk": "license-check",
