@@ -30,7 +30,7 @@
   },
   "license-check-config": {
     "src": [
-      "**/*.cto"
+      "models/**/*.cto"
     ],
     "path": "header.txt",
     "blocking": true,
