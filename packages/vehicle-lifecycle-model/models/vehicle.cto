@@ -1,0 +1,88 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Vehicle Transfer Demo business network definition.
+ */
+namespace org.acme.vehicle.lifecycle
+
+import composer.base.Person
+import composer.business.Business
+
+enum VehicleStatus {
+  o CREATED
+  o SCRAPPED
+}
+
+asset Vehicle identified by VIN {
+  o String VIN
+  o String numberPlate optional
+  o String model
+  o String colour
+  o String v5cid optional
+  o Double co2Rating
+  --> Manufacturer manufacturer
+  --> PrivateOwner person optional
+  --> CompanyOwner company optional
+}
+
+participant PrivateOwner identified by email extends Person {
+  o String email
+  --> Vehicle[] vehicles optional
+}
+
+participant CompanyOwner identified by companyId extends Business {
+  o String companyId
+  --> Vehicle[] vehicles optional
+}
+
+participant Manufacturer extends CompanyOwner {
+}
+
+participant Regulator extends CompanyOwner {
+}
+
+participant Dealership extends CompanyOwner {
+}
+
+participant AuctionHouse extends CompanyOwner {
+}
+
+participant ScrapMerchant extends CompanyOwner {
+}
+
+transaction Authorise identified by transactionID {
+  o String transactionID
+  --> Regulator regulator
+  --> CompanyOwner manufacturer
+  --> Vehicle vehicle
+}
+
+transaction CompanyTransfer identified by transactionID {
+  o String transactionID
+  --> Vehicle vehicle
+  --> CompanyOwner company
+}
+
+transaction PrivateTransfer identified by transactionID {
+  o String transactionID
+  --> Vehicle vehicle
+  --> PrivateOwner privateOwner
+}
+
+transaction ScrapCar identified by transactionID {
+  o String transactionID
+  --> Vehicle vehicle
+  --> ScrapMerchant scrapMerchant
+}

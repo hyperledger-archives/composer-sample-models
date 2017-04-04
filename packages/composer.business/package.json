@@ -1,23 +1,26 @@
 {
-  "name": "animaltracking-model",
+  "name": "composer.business",
   "version": "0.0.11",
-  "description": "Animal Tracking model based on UK DEFRA regulations",
-  "scripts": {
-    "licchk": "license-check",
-    "test": "npm run licchk"
+  "description": "Composer Business Model",
+  "dependencies": {
+    "composer.base": "^0.0.11"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/fabric-composer/sample-models.git"
   },
   "keywords": [
-    "defra",
-    "animal",
-    "tracking",
-    "compliance"
+    "composer-model",
+    "business",
+    "employee",
+    "manager"
   ],
   "author": "Fabric Composer",
   "license": "Apache-2.0",
+  "scripts": {
+    "licchk": "license-check",
+    "test": "npm run licchk"
+  },
   "devDependencies": {
     "license-check": "^1.1.5"
   },

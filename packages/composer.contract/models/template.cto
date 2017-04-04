@@ -11,3 +11,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+/**
+  * Pro-forma contract related types
+  */
+
+namespace composer.template
+
+concept Clause {
+  o Integer index
+  o String text
+}
+
+asset Template identified by id {
+  o String id
+  o String description
+  o Clause[] clauses
+}
+
+transaction CreateTemplate identified by id {
+  o String id
+  o String description
+  o Clause[] clauses
+}
+
+transaction UpdateTemplate identified by id {
+  o String id
+  o String description
+  o Clause[] clauses
+}

@@ -1,23 +1,30 @@
 {
-  "name": "animaltracking-model",
-  "version": "0.0.11",
-  "description": "Animal Tracking model based on UK DEFRA regulations",
-  "scripts": {
-    "licchk": "license-check",
-    "test": "npm run licchk"
-  },
+  "name": "vehicle.lifecycle",
+  "version": "0.0.1",
+  "description": "Vehicle Lifecycle Model",
   "repository": {
     "type": "git",
     "url": "https://github.com/fabric-composer/sample-models.git"
   },
+    "dependencies": {
+    "composer.business": "^0.0.11",
+    "composer.base": "^0.0.11"
+  },
   "keywords": [
-    "defra",
-    "animal",
-    "tracking",
-    "compliance"
+    "composer-model",
+    "vehicle",
+    "manufacturer",
+    "regulator",
+    "dealership",
+    "auction house",
+    "scrap merchant"   
   ],
   "author": "Fabric Composer",
   "license": "Apache-2.0",
+  "scripts": {
+    "licchk": "license-check",
+    "test": "npm run licchk"
+  },
   "devDependencies": {
     "license-check": "^1.1.5"
   },
