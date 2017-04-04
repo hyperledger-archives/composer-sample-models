@@ -1,6 +1,6 @@
 {
   "name": "vehicle.lifecycle",
-  "version": "0.0.1",
+  "version": "0.0.11",
   "description": "Vehicle Lifecycle Model",
   "repository": {
     "type": "git",
