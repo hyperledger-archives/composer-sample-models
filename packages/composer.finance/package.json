@@ -27,7 +27,7 @@
     "src": [
       "**/*.cto"
     ],
-    "path": "../header.txt",
+    "path": "header.txt",
     "blocking": true,
     "logInfo": false,
     "logError": true
