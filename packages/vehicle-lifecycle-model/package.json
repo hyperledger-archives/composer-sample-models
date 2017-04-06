@@ -1,14 +1,14 @@
 {
   "name": "vehicle.lifecycle",
-  "version": "0.0.11",
+  "version": "0.0.13",
   "description": "Vehicle Lifecycle Model",
   "repository": {
     "type": "git",
     "url": "https://github.com/fabric-composer/sample-models.git"
   },
-    "dependencies": {
-    "composer.business": "^0.0.11",
-    "composer.base": "^0.0.11"
+  "dependencies": {
+    "composer.business": "^0.0.13",
+    "composer.base": "^0.0.13"
   },
   "keywords": [
     "composer-model",
@@ -17,7 +17,7 @@
     "regulator",
     "dealership",
     "auction house",
-    "scrap merchant"   
+    "scrap merchant"
   ],
   "author": "Fabric Composer",
   "license": "Apache-2.0",
