@@ -22,19 +22,26 @@ import composer.business.Business
 
 enum VehicleStatus {
   o CREATED
+  o AUTHORIZED
   o SCRAPPED
+}
+
+concept VehicleDetails {
+  o String numberPlate optional
+  o String model
+  o String make
+  o String colour
+  o String v5cid optional
+  o Double co2Rating
 }
 
 asset Vehicle identified by VIN {
   o String VIN
-  o String numberPlate optional
-  o String model
-  o String colour
-  o String v5cid optional
-  o Double co2Rating
+  o VehicleDetails vehicleDetails
+  o VehicleStatus vehicleStatus
   --> Manufacturer manufacturer
-  --> PrivateOwner person optional
-  --> CompanyOwner company optional
+  --> PrivateOwner privateOwner optional
+  --> CompanyOwner companyOwner optional
 }
 
 participant PrivateOwner identified by email extends Person {
@@ -62,10 +69,16 @@ participant AuctionHouse extends CompanyOwner {
 participant ScrapMerchant extends CompanyOwner {
 }
 
+transaction ManufactureVehicle identified by transactionID {
+  o String transactionID
+  o String vin
+  o VehicleDetails vehicleDetails
+}
+
 transaction Authorise identified by transactionID {
   o String transactionID
   --> Regulator regulator
-  --> CompanyOwner manufacturer
+  --> Manufacturer manufacturer
   --> Vehicle vehicle
 }
 
@@ -81,8 +94,12 @@ transaction PrivateTransfer identified by transactionID {
   --> PrivateOwner privateOwner
 }
 
-transaction ScrapCar identified by transactionID {
+transaction ScrapVehicle identified by transactionID {
   o String transactionID
   --> Vehicle vehicle
   --> ScrapMerchant scrapMerchant
+}
+
+transaction SetupDemo identified by transactionID {
+  o String transactionID
 }
