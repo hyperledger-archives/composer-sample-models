@@ -73,6 +73,7 @@ transaction ManufactureVehicle identified by transactionID {
   o String transactionID
   o String vin
   o VehicleDetails vehicleDetails
+  --> Manufacturer manufacturer
 }
 
 transaction Authorise identified by transactionID {
