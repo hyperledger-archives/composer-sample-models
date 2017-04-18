@@ -1,6 +1,6 @@
 {
   "name": "composer.base",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Composer Base Model",
   "repository": {
     "type": "git",
