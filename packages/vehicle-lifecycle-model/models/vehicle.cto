@@ -21,9 +21,10 @@ import composer.base.Person
 import composer.business.Business
 
 enum VehicleStatus {
-  o CREATED
-  o AUTHORIZED
-  o SCRAPPED
+  o ORDERED // Buyer has placed an order
+  o VIN_ASSIGNED // Chasis manufactured and stamped with VIN
+  o REGISTERED // Vehicle now has a log book
+  o SCRAPPED // Vehicle has been recycled and VIN/V5C cannot be reused
 }
 
 concept VehicleDetails {
