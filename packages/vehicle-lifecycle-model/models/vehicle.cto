@@ -13,93 +13,28 @@
  */
 
 /**
- * Vehicle Transfer Demo business network definition.
+ * Vehicle model for vehicle lifecycle
  */
 namespace org.acme.vehicle.lifecycle
 
 import composer.base.Person
 import composer.business.Business
 
-enum VehicleStatus {
-  o ORDERED // Buyer has placed an order
-  o VIN_ASSIGNED // Chasis manufactured and stamped with VIN
-  o REGISTERED // Vehicle now has a log book
-  o SCRAPPED // Vehicle has been recycled and VIN/V5C cannot be reused
-}
-
-concept VehicleDetails {
-  o String numberPlate optional
-  o String model
-  o String make
-  o String colour
-  o String v5cid optional
-  o Double co2Rating
-}
-
-asset Vehicle identified by VIN {
-  o String VIN
-  o VehicleDetails vehicleDetails
-  o VehicleStatus vehicleStatus
-  --> Manufacturer manufacturer
-  --> PrivateOwner privateOwner optional
-  --> CompanyOwner companyOwner optional
-}
-
 participant PrivateOwner identified by email extends Person {
   o String email
-  --> Vehicle[] vehicles optional
 }
 
-participant CompanyOwner identified by companyId extends Business {
+participant Company identified by companyId extends Business {
   o String companyId
-  --> Vehicle[] vehicles optional
 }
 
-participant Manufacturer extends CompanyOwner {
+participant Regulator extends Company {
 }
 
-participant Regulator extends CompanyOwner {
+participant AuctionHouse extends Company {
 }
 
-participant Dealership extends CompanyOwner {
-}
-
-participant AuctionHouse extends CompanyOwner {
-}
-
-participant ScrapMerchant extends CompanyOwner {
-}
-
-transaction ManufactureVehicle identified by transactionID {
-  o String transactionID
-  o String vin
-  o VehicleDetails vehicleDetails
-  --> Manufacturer manufacturer
-}
-
-transaction Authorise identified by transactionID {
-  o String transactionID
-  --> Regulator regulator
-  --> Manufacturer manufacturer
-  --> Vehicle vehicle
-}
-
-transaction CompanyTransfer identified by transactionID {
-  o String transactionID
-  --> Vehicle vehicle
-  --> CompanyOwner company
-}
-
-transaction PrivateTransfer identified by transactionID {
-  o String transactionID
-  --> Vehicle vehicle
-  --> PrivateOwner privateOwner
-}
-
-transaction ScrapVehicle identified by transactionID {
-  o String transactionID
-  --> Vehicle vehicle
-  --> ScrapMerchant scrapMerchant
+participant ScrapMerchant extends Company {
 }
 
 transaction SetupDemo identified by transactionID {

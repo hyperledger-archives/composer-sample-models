@@ -24,9 +24,10 @@ enum Gender {
 }
 
 abstract participant Person {
+  o String title optional
   o String firstName  optional
   o String lastName  optional
-  o String middleName  optional
+  o String[] middleNames  optional
   o Gender gender optional
   o String[] nationalities optional
   o ContactDetails contactDetails optional
