@@ -62,7 +62,7 @@ participant Farmer extends User {
     o String address2
     o String county
     o String postcode
-    --> Business business
+    --> Business business optional
 }
 
 /**
@@ -129,4 +129,8 @@ transaction AnimalMovementDeparture extends AnimalMovement {
  */
 transaction AnimalMovementArrival extends AnimalMovement {
   --> Field arrivalField
+}
+
+transaction SetupDemo identified by transactionId {
+  o String transactionId
 }
