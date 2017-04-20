@@ -98,7 +98,7 @@ concept ExhaustEmissions {
 transaction ApplicationForVehicleRegistrationCertificate identified by transactionId {
   o String transactionId
   o VehicleDetails vehicleDetails
-  o Person keeperDetails
+  --> Person keeper
   o String dvlaFleetNumber optional
   o String driversLicenseNumber optional
   o Long mileage optional
@@ -117,8 +117,8 @@ transaction VehicleTransaction identified by transactionId {
 transaction PrivateVehicleTransfer extends VehicleTransaction {
   o VehicleDetails vehicleDetails
   o VehicleDetails changesToCurrentVehicle optional
-  o Person seller
-  o Person buyer
+  --> Person seller
+  --> Person buyer
   o String specialNotes optional
 }
 
@@ -132,7 +132,7 @@ asset Vehicle identified by VIN {
   o String VIN
   o VehicleDetails vehicleDetails
   o VehicleStatus vehicleStatus
-  o Person owner
+  --> Person owner
   o String numberPlate
   o VehicleTransaction[] logEntries optional
 }
