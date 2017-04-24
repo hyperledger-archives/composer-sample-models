@@ -53,9 +53,9 @@ concept VehicleDetails {
   o String modelVariant optional
   o String modelVersion optional
   o String bodyType optional
-  o String taxationClass optional
+  o TaxClass taxationClass optional
   o Integer revenueWeight optional
-  o Integer cylnderCapacity optional
+  o Integer cylinderCapacity optional
   o Double co2 optional // g/km
   o String typeOfFuel optional
   o Integer numberOfSeats optional
