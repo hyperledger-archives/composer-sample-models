@@ -49,7 +49,7 @@ concept VehicleDetails {
   o String make
   o String modelType
   o String colour
-  o String VIN
+  o String vin
   o String modelVariant optional
   o String modelVersion optional
   o String bodyType optional
@@ -128,11 +128,11 @@ enum VehicleStatus {
   o SCRAPPED
 }
 
-asset Vehicle identified by VIN {
-  o String VIN
+asset Vehicle identified by vin {
+  o String vin
   o VehicleDetails vehicleDetails
   o VehicleStatus vehicleStatus
-  --> Person owner
+  --> Person owner optional
   o String numberPlate
   o VehicleTransaction[] logEntries optional
 }
