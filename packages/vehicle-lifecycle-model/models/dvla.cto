@@ -105,7 +105,7 @@ transaction ApplicationForVehicleRegistrationCertificate identified by transacti
   o String previousPostCode optional
 }
 
-transaction VehicleTransaction identified by transactionId {
+abstract transaction VehicleTransaction identified by transactionId {
   o String transactionId
   --> Vehicle vehicle
 }
@@ -133,6 +133,6 @@ asset Vehicle identified by vin {
   o VehicleDetails vehicleDetails
   o VehicleStatus vehicleStatus
   --> Person owner optional
-  o String numberPlate
+  o String numberPlate optional
   o VehicleTransaction[] logEntries optional
 }
