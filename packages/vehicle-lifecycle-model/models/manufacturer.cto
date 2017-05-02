@@ -17,7 +17,7 @@
  */
 namespace org.acme.vehicle.lifecycle.manufacturer
 
-import org.gov.uk.dvla.VehicleDetails
+import org.vda.VehicleDetails
 import composer.business.Business
 import composer.base.Person
 
@@ -57,6 +57,7 @@ asset Order identified by orderId {
  */
 transaction PlaceOrder identified by transactionID {
   o String transactionID
+  o String orderID
   o VehicleDetails vehicleDetails
   --> Manufacturer manufacturer
   --> Person orderer
