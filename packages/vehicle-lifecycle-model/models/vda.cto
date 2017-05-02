@@ -15,7 +15,7 @@
 /**
  * Model based on the DVLA vehicle definition and registration process
  */
-namespace org.gov.uk.dvla
+namespace org.vda
 
 import composer.base.Person
 
@@ -49,7 +49,7 @@ concept VehicleDetails {
   o String make
   o String modelType
   o String colour
-  o String vin
+  o String vin optional
   o String modelVariant optional
   o String modelVersion optional
   o String bodyType optional
@@ -92,6 +92,12 @@ concept ExhaustEmissions {
   o Double particulates
 }
 
+concept VehicleTransferLogEntry {
+  --> Vehicle vehicle
+  --> Person buyer
+  --> Person seller
+}
+
 /**
  * Based on the DVLA V62 document
  */
@@ -115,8 +121,6 @@ abstract transaction VehicleTransaction identified by transactionId {
  * DVLA V5C
  */
 transaction PrivateVehicleTransfer extends VehicleTransaction {
-  o VehicleDetails vehicleDetails
-  o VehicleDetails changesToCurrentVehicle optional
   --> Person seller
   --> Person buyer
   o String specialNotes optional
@@ -134,5 +138,8 @@ asset Vehicle identified by vin {
   o VehicleStatus vehicleStatus
   --> Person owner optional
   o String numberPlate optional
-  o VehicleTransaction[] logEntries optional
+  o VehicleTransferLogEntry[] logEntries optional
+}
+
+transaction ScrapVehicle extends VehicleTransaction {
 }
