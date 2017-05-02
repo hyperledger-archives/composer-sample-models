@@ -142,4 +142,5 @@ asset Vehicle identified by vin {
 }
 
 transaction ScrapVehicle extends VehicleTransaction {
+  o VehicleTransaction[] logEntries optional
 }
