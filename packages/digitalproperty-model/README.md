@@ -7,7 +7,7 @@ This part is encapulsated within (currently) a single file using a defined synta
 ## What should I do with this model
 It is expected that the model would be part of the CI pipeline.  It is expected that the model would be held in a source management system, eg github-enterprise. Editted then submitted to a eg TravisCI build. This would then publish the model to the npm-enterpise
 
-This specific DigitalProperty-Model is already published into the private @ibm NPM repository. Therefore the deployment and pipeline has already been done for you. 
+This specific DigitalProperty-Model is already published into an NPM repository. Therefore the deployment and pipeline has already been done for you. 
 
 # Creating a new model for yourself
 There are two ways of creating a new model; either using the command line and your favourite editor, or by using the the web Composer UI.
@@ -40,7 +40,7 @@ Load that file up in any editor and you can then add your model, Again using thi
 (aside if you are using the Atom editor, then there is a syntax highlighter plugin available)
 
 ```
-/**  A 'Getting Started Tutorial' to work with the IBM Concerto Framework
+/**  A 'Getting Started Tutorial' to work with the Hyperledger Composer Framework
 */
 
 namespace net.biz.digitalPropertyNetwork
