@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fabric-composer/sample-models.git"
+    "url": "https://github.com/hyperledger/composer-sample-models.git"
   },
   "keywords": [
     "composer-model",
     "contract",
     "proforma"
   ],
-  "author": "Fabric Composer",
+  "author": "Hyperledger Composer",
   "license": "Apache-2.0",
   "scripts": {
     "licchk": "license-check",
