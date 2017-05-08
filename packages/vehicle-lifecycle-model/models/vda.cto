@@ -95,7 +95,8 @@ concept ExhaustEmissions {
 concept VehicleTransferLogEntry {
   --> Vehicle vehicle
   --> Person buyer
-  --> Person seller
+  --> Person seller optional
+  o DateTime timestamp
 }
 
 /**
@@ -138,9 +139,14 @@ asset Vehicle identified by vin {
   o VehicleStatus vehicleStatus
   --> Person owner optional
   o String numberPlate optional
+  o String suspiciousMessage optional
   o VehicleTransferLogEntry[] logEntries optional
 }
 
 transaction ScrapVehicle extends VehicleTransaction {
   o VehicleTransaction[] logEntries optional
+}
+
+transaction UpdateSuspicious extends VehicleTransaction {
+  o String message
 }

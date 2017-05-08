@@ -50,14 +50,15 @@ asset Order identified by orderId {
   o OrderStatus orderStatus
   --> Manufacturer manufacturer
   --> Person orderer
+  o UpdateOrderStatus[] statusUpdates optional //TODO (LG): Unit test this
 }
 
 /**
  * Transaction to create an order
  */
-transaction PlaceOrder identified by transactionID {
-  o String transactionID
-  o String orderID
+transaction PlaceOrder identified by transactionId {
+  o String transactionId
+  o String orderId
   o VehicleDetails vehicleDetails
   --> Manufacturer manufacturer
   --> Person orderer
@@ -66,8 +67,8 @@ transaction PlaceOrder identified by transactionID {
 /**
  * Transaction to update the status of an order
  */
-transaction UpdateOrderStatus identified by transactionID {
-  o String transactionID
+transaction UpdateOrderStatus identified by transactionId {
+  o String transactionId
   o OrderStatus orderStatus
   o String vin optional
   o String v5c optional
