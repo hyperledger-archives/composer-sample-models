@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fabric-composer/sample-models.git"
+    "url": "https://github.com/hyperledger/composer-sample-models.git"
   },
   "keywords": [
     "defra",
@@ -16,7 +16,7 @@
     "tracking",
     "compliance"
   ],
-  "author": "Fabric Composer",
+  "author": "Hyperledger Composer",
   "license": "Apache-2.0",
   "devDependencies": {
     "license-check": "^1.1.5"

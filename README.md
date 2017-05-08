@@ -1,2 +1,2 @@
 # sample-models
-Sample Fabric Composer Models
+Sample Hyperledger Composer Models
