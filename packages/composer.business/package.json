@@ -1,9 +1,9 @@
 {
   "name": "composer.business",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Composer Business Model",
   "dependencies": {
-    "composer.base": "^0.0.16"
+    "composer.base": "^0.0.17"
   },
   "repository": {
     "type": "git",
