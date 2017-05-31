@@ -1,9 +1,9 @@
 {
   "name": "composer.contract",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Composer Contract Model",
   "dependencies": {
-    "composer.business": "^0.0.17"
+    "composer.business": "^0.0.18"
   },
   "repository": {
     "type": "git",
