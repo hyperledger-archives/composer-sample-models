@@ -11,14 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 /**
  * Model based on the DVLA vehicle definition and registration process
  */
 namespace org.vda
-
 import composer.base.Person
-
 /**
  * Based on DVLA document V355/1
  */
@@ -44,7 +41,6 @@ enum TaxClass {
   o EMERGENCY_VEHICLE
   o EXCEMPT_VEHICLE
 }
-
 concept VehicleDetails {
   o String make
   o String modelType
@@ -72,18 +68,15 @@ concept VehicleDetails {
   o SoundDetails soundDetails optional
   o ExhaustEmissions exhaustEmissions optional
 }
-
 concept TrailerDetails {
   o Double maxPermissibleTowableMassBraked
   o Double maxPermissibleTowableMassUnbraked
 }
-
 concept SoundDetails {
   o Double stationary
   o Double engineSpeed
   o Double driveBy
 }
-
 concept ExhaustEmissions {
   o Double co
   o Double hc
@@ -91,14 +84,12 @@ concept ExhaustEmissions {
   o Double hc_plus_nox
   o Double particulates
 }
-
 concept VehicleTransferLogEntry {
   --> Vehicle vehicle
   --> Person buyer
   --> Person seller optional
   o DateTime timestamp
 }
-
 /**
  * Based on the DVLA V62 document
  */
@@ -111,13 +102,10 @@ transaction ApplicationForVehicleRegistrationCertificate identified by transacti
   o Long mileage optional
   o String previousPostCode optional
 }
-
 abstract transaction VehicleTransaction identified by transactionId {
   o String transactionId
   --> Vehicle vehicle
 }
-
-
 /**
  * DVLA V5C
  */
@@ -126,13 +114,11 @@ transaction PrivateVehicleTransfer extends VehicleTransaction {
   --> Person buyer
   o String specialNotes optional
 }
-
 enum VehicleStatus {
   o ACTIVE
   o OFF_THE_ROAD
   o SCRAPPED
 }
-
 asset Vehicle identified by vin {
   o String vin
   o VehicleDetails vehicleDetails
@@ -142,11 +128,17 @@ asset Vehicle identified by vin {
   o String suspiciousMessage optional
   o VehicleTransferLogEntry[] logEntries optional
 }
-
 transaction ScrapVehicle extends VehicleTransaction {
   o VehicleTransaction[] logEntries optional
 }
-
 transaction UpdateSuspicious extends VehicleTransaction {
   o String message
+}
+transaction ScrapAllVehiclesByColour identified by transactionId {
+  o String transactionId
+  o String colour
+}
+event ScrapVehicleEvent identified by eventId {
+  o String eventId
+  --> Vehicle vehicle
 }
