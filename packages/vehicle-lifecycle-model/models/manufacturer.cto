@@ -64,6 +64,12 @@ transaction PlaceOrder identified by transactionId {
   --> Person orderer
 }
 
+event PlaceOrderEvent identified by eventId{
+  o String eventId
+  o String orderId
+  o VehicleDetails vehicleDetails
+}
+
 /**
  * Transaction to update the status of an order
  */
@@ -74,4 +80,10 @@ transaction UpdateOrderStatus identified by transactionId {
   o String v5c optional
   o String numberPlate optional
   --> Order order
+}
+
+event UpdateOrderStatusEvent identified by eventId{
+  o String eventId
+  o OrderStatus orderStatus
+  o Order order
 }
