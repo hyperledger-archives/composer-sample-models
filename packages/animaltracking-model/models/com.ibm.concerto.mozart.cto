@@ -109,8 +109,7 @@ asset Business identified by sbi {
 /**
  * An abstract transaction type for animal movements
  */
-abstract transaction AnimalMovement identified by transactionId {
-  o String transactionId
+abstract transaction AnimalMovement {
   o String[] logs optional
     --> Animal animal
     --> Business from
@@ -131,6 +130,5 @@ transaction AnimalMovementArrival extends AnimalMovement {
   --> Field arrivalField
 }
 
-transaction SetupDemo identified by transactionId {
-  o String transactionId
+transaction SetupDemo  {
 }

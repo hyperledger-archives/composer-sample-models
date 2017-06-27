@@ -35,8 +35,7 @@ participant Person identified by personId {
 }
 
 
-transaction RegisterPropertyForSale identified by transactionId{
-  o String transactionId
+transaction RegisterPropertyForSale {
   --> Person seller
   --> LandTitle title
 }
