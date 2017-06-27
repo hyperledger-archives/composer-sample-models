@@ -1,10 +1,10 @@
 {
   "name": "composer.finance",
-  "version": "0.0.18",
+  "version": "0.1.0",
   "description": "Composer Finance Model",
   "dependencies": {
-    "composer.base": "^0.0.18",
-    "composer.business": "^0.0.18"
+    "composer.base": "^0.1.0",
+    "composer.business": "^0.1.0"
   },
   "repository": {
     "type": "git",
