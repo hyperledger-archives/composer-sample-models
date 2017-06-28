@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "composer": "^0.9.0"
+  },
   "name": "composer.finance",
   "version": "0.0.18",
   "description": "Composer Finance Model",
@@ -11,6 +14,7 @@
     "url": "https://github.com/hyperledger/composer-sample-models.git"
   },
   "keywords": [
+    "composer",
     "composer-model",
     "bond"
   ],
