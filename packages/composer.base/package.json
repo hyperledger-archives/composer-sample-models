@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "composer": "^0.9.0"
+  },
   "name": "composer.base",
   "version": "0.0.18",
   "description": "Composer Base Model",
@@ -7,6 +10,7 @@
     "url": "https://github.com/hyperledger/composer-sample-models.git"
   },
   "keywords": [
+    "composer",
     "composer-model",
     "gender",
     "contact details",
