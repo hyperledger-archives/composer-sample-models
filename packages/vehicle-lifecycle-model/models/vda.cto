@@ -93,8 +93,7 @@ concept VehicleTransferLogEntry {
 /**
  * Based on the DVLA V62 document
  */
-transaction ApplicationForVehicleRegistrationCertificate identified by transactionId {
-  o String transactionId
+transaction ApplicationForVehicleRegistrationCertificate {
   o VehicleDetails vehicleDetails
   --> Person keeper
   o String dvlaFleetNumber optional
@@ -102,8 +101,7 @@ transaction ApplicationForVehicleRegistrationCertificate identified by transacti
   o Long mileage optional
   o String previousPostCode optional
 }
-abstract transaction VehicleTransaction identified by transactionId {
-  o String transactionId
+abstract transaction VehicleTransaction  {
   --> Vehicle vehicle
 }
 /**
@@ -134,11 +132,9 @@ transaction ScrapVehicle extends VehicleTransaction {
 transaction UpdateSuspicious extends VehicleTransaction {
   o String message
 }
-transaction ScrapAllVehiclesByColour identified by transactionId {
-  o String transactionId
+transaction ScrapAllVehiclesByColour  {
   o String colour
 }
-event ScrapVehicleEvent identified by eventId {
-  o String eventId
+event ScrapVehicleEvent {
   --> Vehicle vehicle
 }

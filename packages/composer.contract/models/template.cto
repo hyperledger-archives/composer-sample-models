@@ -29,14 +29,12 @@ asset Template identified by id {
   o Clause[] clauses
 }
 
-transaction CreateTemplate identified by id {
-  o String id
+transaction CreateTemplate {
   o String description
   o Clause[] clauses
 }
 
-transaction UpdateTemplate identified by id {
-  o String id
+transaction UpdateTemplate  {
   o String description
   o Clause[] clauses
 }

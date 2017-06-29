@@ -56,16 +56,14 @@ asset Order identified by orderId {
 /**
  * Transaction to create an order
  */
-transaction PlaceOrder identified by transactionId {
-  o String transactionId
+transaction PlaceOrder {
   o String orderId
   o VehicleDetails vehicleDetails
   --> Manufacturer manufacturer
   --> Person orderer
 }
 
-event PlaceOrderEvent identified by eventId{
-  o String eventId
+event PlaceOrderEvent {
   o String orderId
   o VehicleDetails vehicleDetails
 }
@@ -73,8 +71,7 @@ event PlaceOrderEvent identified by eventId{
 /**
  * Transaction to update the status of an order
  */
-transaction UpdateOrderStatus identified by transactionId {
-  o String transactionId
+transaction UpdateOrderStatus{
   o OrderStatus orderStatus
   o String vin optional
   o String v5c optional
@@ -82,8 +79,7 @@ transaction UpdateOrderStatus identified by transactionId {
   --> Order order
 }
 
-event UpdateOrderStatusEvent identified by eventId{
-  o String eventId
+event UpdateOrderStatusEvent {
   o OrderStatus orderStatus
   o Order order
 }
