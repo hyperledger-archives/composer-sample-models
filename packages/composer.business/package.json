@@ -3,10 +3,10 @@
     "composer": "^0.9.0"
   },
   "name": "composer.business",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Composer Business Model",
   "dependencies": {
-    "composer.base": "^0.1.0"
+    "composer.base": "^0.1.1"
   },
   "repository": {
     "type": "git",
