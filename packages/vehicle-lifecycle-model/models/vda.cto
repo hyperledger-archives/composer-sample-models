@@ -46,6 +46,8 @@ concept VehicleDetails {
   o String modelType
   o String colour
   o String vin optional
+  o String v5c optional
+  o String numberPlate optional
   o String modelVariant optional
   o String modelVersion optional
   o String bodyType optional
