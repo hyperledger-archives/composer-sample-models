@@ -134,7 +134,7 @@ transaction ScrapVehicle extends VehicleTransaction {
 transaction UpdateSuspicious extends VehicleTransaction {
   o String message
 }
-transaction ScrapAllVehiclesByColour  {
+transaction ScrapAllVehiclesByColourTxn {
   o String colour
 }
 event ScrapVehicleEvent {
