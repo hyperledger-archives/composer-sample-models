@@ -3,7 +3,7 @@
     "composer": "^0.17.0"
   },
   "name": "composer.base",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Composer Base Model",
   "repository": {
     "type": "git",
