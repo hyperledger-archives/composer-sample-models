@@ -3,10 +3,10 @@
     "composer": "^0.17.0"
   },
   "name": "composer.contract",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Composer Contract Model",
   "dependencies": {
-    "composer.business": "^0.2.1"
+    "composer.business": "^0.2.2"
   },
   "repository": {
     "type": "git",
