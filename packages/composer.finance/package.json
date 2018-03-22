@@ -21,19 +21,32 @@
   "author": "Hyperledger Composer",
   "license": "Apache-2.0",
   "scripts": {
-    "licchk": "license-check",
+    "licchk": "license-check-and-add",
     "test": "npm run licchk"
   },
   "devDependencies": {
-    "license-check": "^1.1.5"
+    "license-check-and-add": "2.0.4"
   },
-  "license-check-config": {
-    "src": [
-      "models/**/*.cto"
+  "license-check-and-add-config": {
+    "folder": ".",
+    "license": "LICENSE.txt",
+    "exact_paths_method": "EXCLUDE",
+    "exact_paths": [
+      "node_modules"
     ],
-    "path": "header.txt",
-    "blocking": true,
-    "logInfo": false,
-    "logError": true
+    "file_type_method": "EXCLUDE",
+    "file_types": [
+      ".md"
+    ],
+    "insert_license": false,
+    "license_formats": {
+      "cto": {
+        "prepend": "/*",
+        "append": " */",
+        "eachLine": {
+          "prepend": " * "
+        }
+      }
+    }
   }
 }
