@@ -1,12 +1,12 @@
 {
   "engines": {
-    "composer": "^0.16.0"
+    "composer": "^0.18.0"
   },
   "name": "digitalproperty-model",
-  "version": "0.1.3",
+  "version": "0.2.2",
   "description": "Digital Property Network",
   "scripts": {
-    "licchk": "license-check",
+    "licchk": "license-check-and-add",
     "test": "npm run licchk"
   },
   "repository": {
@@ -24,15 +24,29 @@
   "author": "Hyperledger Composer",
   "license": "Apache-2.0",
   "devDependencies": {
-    "license-check": "^1.1.5"
+    "license-check-and-add": "2.0.4"
   },
-  "license-check-config": {
-    "src": [
-      "models/**/*.cto"
+  "license-check-and-add-config": {
+    "folder": ".",
+    "license": "LICENSE.txt",
+    "exact_paths_method": "EXCLUDE",
+    "exact_paths": [
+      "node_modules"
     ],
-    "path": "header.txt",
-    "blocking": true,
-    "logInfo": false,
-    "logError": true
+    "file_type_method": "EXCLUDE",
+    "file_types": [
+      ".md",
+      ".js"
+    ],
+    "insert_license": false,
+    "license_formats": {
+      "cto": {
+        "prepend": "/*",
+        "append": " */",
+        "eachLine": {
+          "prepend": " * "
+        }
+      }
+    }
   }
 }
