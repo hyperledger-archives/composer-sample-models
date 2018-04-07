@@ -3,7 +3,7 @@
     "composer": "^0.19.0"
   },
   "name": "vehicle-lifecycle-model",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Vehicle Lifecycle Model",
   "repository": {
     "type": "git",
