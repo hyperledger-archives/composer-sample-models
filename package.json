@@ -37,11 +37,11 @@
     "exact_paths": [
       "node_modules",
       "packages",
-      ".git"
+      ".git",
+      "markdown-license.txt"
     ],
     "file_type_method": "EXCLUDE",
     "file_types": [
-      ".md",
       ".yml",
       ".enc"
     ],
@@ -53,6 +53,9 @@
         "eachLine": {
           "prepend": " * "
         }
+      },
+      "md": {
+        "file": "markdown-license.txt" 
       }
     }
   },
